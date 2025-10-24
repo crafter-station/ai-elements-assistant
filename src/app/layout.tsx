@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AI Elements Assistant | Powered by Vercel",
+  title: "Vercel AI SDK Assistant | Powered by Lupa",
   description:
-    "Your intelligent AI assistant powered by Vercel AI Elements. Search knowledge bases, analyze documents, and get instant answers.",
+    "Your intelligent AI assistant for the Vercel AI SDK. Search knowledge base get instant and insighful answers.",
 };
 
 export default function RootLayout({

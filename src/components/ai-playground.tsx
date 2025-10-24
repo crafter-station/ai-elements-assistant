@@ -33,7 +33,7 @@ export function AIPlayground() {
   const [model, setModel] = useState<string>(models[0].value);
   const { messages, sendMessage, status } = useChat({
     transport: new DefaultChatTransport({
-      api: "/api/chat",
+      api: "/chat",
     }),
     onError: (error) => {
       console.error("Chat error:", error);
