@@ -10,7 +10,11 @@ export const searchKnowledgeTool = tool({
   execute: async ({ query }) => {
     const searchUrl = `https://www.lupa.build/api/search?projectId=${process.env.LUPA_PROJECT_ID}&deploymentId=${process.env.LUPA_DEPLOYMENT_ID}&query=${encodeURIComponent(query)}`;
 
-    const response = await fetch(searchUrl);
+    const response = await fetch(searchUrl, {
+      headers: {
+        Authorization: `Bearer ${process.env.LUPA_API_KEY}`,
+      },
+    });
 
     if (!response.ok) {
       throw new Error(`Search failed: ${response.statusText}`);

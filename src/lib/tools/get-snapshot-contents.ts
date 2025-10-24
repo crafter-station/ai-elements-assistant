@@ -12,7 +12,11 @@ export const getSnapshotContentsTool = tool({
   execute: async ({ snapshotId }) => {
     const snapshotUrl = `https://www.lupa.build/api/snapshots/${snapshotId}`;
 
-    const response = await fetch(snapshotUrl);
+    const response = await fetch(snapshotUrl, {
+      headers: {
+        Authorization: `Bearer ${process.env.LUPA_API_KEY}`,
+      },
+    });
 
     if (!response.ok) {
       throw new Error(`Failed to fetch snapshot: ${response.statusText}`);
